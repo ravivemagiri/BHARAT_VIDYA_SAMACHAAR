@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/css/styling_login.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<style type="text/css">
+		.p{
+			  font-family: arial;
+			  font-weight: bold;
+			}
+			.button{
+			  background-color: #3b59ac;
+				width: 200px;
+				height: 60px;
+			  color: white;
+			  outline: none;
+			  font-size: 16px;
+			  border: none;
+			  cursor: pointer;
+			  margin-bottom: 5px;
+			}
+
+			.block-display button{
+			  margin-bottom:5px;
+			  display:block;
+			}
+
+			.button:hover{
+			  background-color: #3b59bc;
+			  font-size: 20px;
+			  transition: 0.5s;
+			  color: white;
+			}
+			a{
+				text-decoration: none;
+				color:white;
+			}
+         </style>
+	</head>
+	<body style="background-color:white;">
+		<div class="register" style="height:500px;">
+			<h1>BVS REGISTRATION</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}" class="active">Register</a>
+				<a href="{{ url_for('banking') }}">ADMIN</a>
+			</div>
+			<form action="#">
+				<div class="block-display">
+				  <p> <span style="font-size:16px;"><strong>Register Me as,</strong></span></p>
+				  </br>
+				  <button class="button"><a href="{{ url_for('student') }}">STUDENT<a/></button>
+				  <button class="button"><a href="{{ url_for('teacher') }}">TEACHER</a></button>
+				  <button class="button"><a href="{{ url_for('volunteer') }}">Volunteer</a></button>
+				  <button class="button"><a href="{{ url_for('older_adult') }}">Older Adults Login</a></button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

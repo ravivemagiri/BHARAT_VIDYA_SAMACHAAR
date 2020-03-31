@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/css/styling_login.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<script src="{{ url_for('static',filename='styles/js/countries.js') }}"></script>
+		<style type="text/css">
+		.p{
+			  font-family: arial;
+			  font-weight: bold;
+			}
+			.button{
+			  background-color: #2a609a;
+				width: 130px;
+				height: 60px;
+			  color: white;
+			  outline: none;
+			  font-size: 16px;
+			  border: none;
+			  cursor: pointer;
+			}
+
+			.block-display button{
+			  margin-bottom:5px;
+			  display:block;
+			}
+
+			.button:hover{
+			  background-color: #32CD32;
+			  font-size: 12px;
+			  transition: 0.5s;
+			}
+			.stateId{
+				width:380px;
+			}
+         </style>
+	</head>
+	<body>
+		<div class="register">
+			<h1>OLDER ADULTS REGISTRATION</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('older_adult') }}" class="active">OLDER ADULTS</a>
+				<a href="{{ url_for('banking') }}">Bank Login</a>
+			</div>
+			<form action="{{ url_for('older_registration') }}" method="post" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="fname" placeholder="First Name" id="fname" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="lname" placeholder="Last Name" id="lname" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="user name" id="username" required>
+				<label for="mail">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="text" name="mail" placeholder="Enter your mail" id="mail" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>

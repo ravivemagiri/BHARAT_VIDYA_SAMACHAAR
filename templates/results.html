@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>OLDER ADULTS EDUCATION</title>
+<!--
+
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/owl-carousel.css">
+    <style type="text/css">
+	table, td, th {  
+	  border: 1px solid #ddd;
+	  text-align: center;
+	}
+
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	th, td {
+	  padding: 15px;
+	}
+	tr:hover {background-color:#f5f5f5;}
+	</style>
+	</head>
+    
+    <body>
+	<header class="header-area header-stick">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo"><img src="static/styles/assets/images/tools.png" width="auto;" height="60px">BVS TOOLS FOR OLDER ADULTS</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{{ url_for('im2lang') }}" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#abo">RESULTS</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section" id="about2">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>Your Output is here,</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- <div style="margin-top:50px;margin-bottom:14px;display:none;">
+	output displays here.<br/>
+	Output displays in table.
+</div>
+ -->
+<table align="center" id="abo">
+<tr><th>IMAGE</th><th>PREDICTED</th></tr>
+</th>
+{% for file_url in file_urls %}
+    <tr>
+	<td><img height="auto" width="auto" src="{{  file_url[0] }}"></td>
+    <td>{{ file_url[1] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br/>
+<section class="section" id="services">
+        <div class="container">
+            <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">Copyright &copy; 2020 BVS Platform | SOLVE4BHARAT Hackathon 
+                
+                . Design: <a rel="nofollow" href="#">Ravi Vemagiri, BVS Team</a></p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+    </section>
+    <script src="static/styles/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="static/styles/assets/js/popper.js"></script>
+    <script src="static/styles/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="static/styles/assets/js/owl-carousel.js"></script>
+    <script src="static/styles/assets/js/scrollreveal.min.js"></script>
+    <script src="static/styles/assets/js/waypoints.min.js"></script>
+    <script src="static/styles/assets/js/jquery.counterup.min.js"></script>
+    <script src="static/styles/assets/js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="static/styles/assets/js/custom.js"></script>
+
+</body>
+</html>

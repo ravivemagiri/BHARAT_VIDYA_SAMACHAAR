@@ -1,0 +1,75 @@
+<html>
+<head>
+  <style type="text/css">
+  .pull-left { float: left; }
+  .pull-right { float: right; }
+  .pull-left li, .pull-right li { display: inline-block; }
+  #main_item { overflow: hidden; }
+
+  #main_item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3b59ac;
+    width:100%;
+    top:0;
+  }
+
+  #sub_item {
+    float: left;
+  }
+
+  #sub_item  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  #sub_item  a:hover {
+    background-color: #111111;
+  }
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+}
+  </style>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  <ul id="main_item" style="height:auto"> 
+    <div class="pull-left">
+      <li id="sub_item"><a href="#home" title="BVS - BHARAT VIDYA SAMCHAAR" style="margin-left:28px;width:150px;font-weight:2;">BVS STUDENT PORTAL</a></li>
+   </div>
+    <div class="pull-right">
+    <li id="sub_item"><a href="{{ url_for('logout') }}">LogOut</a></li>
+  </div>
+</ul>
+<hr/>
+<div class="w3-container" align="center">
+  <div class="w3-card-4" style="width:70%">
+    <div class="w3-container">
+      <table>
+        <tr>
+            <td>Number of Tests taken:</td>
+            <td>{{ result }}</td>
+        </tr>
+    </table>
+    </div>
+    <br/>
+    </div>
+  </div>
+</div>
+</br>
+<div class="footer">
+  &copy;2020| All rights reserved | BVS TEAM
+  </div>
+</body>
+</html>

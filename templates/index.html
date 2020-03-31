@@ -1,0 +1,749 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BVS - Solve4Bharat Hackathon</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/animate.css') }}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/icomoon.css') }}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/bootstrap.css') }}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/magnific-popup.css') }}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/flexslider.css') }}">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/owl.theme.default.min.css') }}">
+	
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/fonts/flaticon/font/flaticon.css') }}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/css/style.css') }}">
+
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static',filename='styles/js/modernizr-2.6.2.min.js') }}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+<style type="text/css">
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+.bullet {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #3b59ac; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */ 
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  font-size: 22px; /* Also needed for space (tweak if needed) */
+}
+/**********************************
+Responsive navbar-brand image CSS
+- Remove navbar-brand padding for firefox bug workaround
+- add 100% height and width auto ... similar to how bootstrap img-responsive class works
+***********************************/
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100px;
+  padding: 5px;
+  width: auto;
+}
+.example2 .navbar-brand>img {
+  padding: 7px 15px;
+}
+
+.brand-centered {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.brand-centered .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-toggle {
+    z-index: 1;
+}
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header {
+	  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+.navbar-alignit .navbar-brand {
+	top: 50%;
+	display: block;
+	position: relative;
+	height: 150px;
+	transform: translate(0,-50%);
+	margin-right: 0px;
+  margin-left: 0px;
+}
+.navbar-nav>li>.dropdown-menu {
+	z-index: 9999;
+}
+.pull-left { float: left; }
+.pull-right { float: right; }
+.pull-left li, .pull-right li { display: inline-block; }
+#main_item { overflow: hidden; }
+
+#main_item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3b59ac;
+  width:100%;
+  top:0;
+}
+
+#sub_item {
+  float: left;
+}
+
+#sub_item  a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+#sub_item  a:hover {
+  background-color: #111111;
+}
+</style>
+	</head>
+	<body>
+		<ul id="main_item" style="height:60px;"> 
+    <div class="pull-left">
+    	<li id="sub_item"><a href="#home" title="BVS - BHARAT VIDYA SAMCHAAR" style="margin-left:28px;width:150px;font-weight:2;">BVS</a></li>
+   </div>
+    <div class="pull-right">
+    	<li id="sub_item"><a href="#colorlib-intro">About</a></li>
+    	<li id="sub_item"><a href="{{ url_for('ranking') }}">Ranking</a></li>
+  		<li id="sub_item"><a href="#news">News</a></li>
+ 		<li id="sub_item"><a href="#contact">Contact</a></li>
+ 		<li id="sub_item"><a href="{{ url_for('login') }}">Login/Register</a></li>
+ 	</div>
+</ul>
+<hr/>
+	<div id="page">
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(static/images/img_bg_1.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>A Learning By Doing System using AI</h1>
+				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Register Now</a></p>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(static/images/img_bg_3.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Early Education Monitoring</h1>
+				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Free Trial</a></p>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(static/images/img_bg_2.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Enabling Innovative Teaching with Technology</h1>
+				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Register Now</a></p>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(static/images/img_bg_4.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Online Ranking Using ML &amp; AI</h1>
+				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Register Now</a></p>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(static/images/seniors.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h1>Continuing Education for Older Adults</h1>
+				   					<p><a href="#" class="btn btn-primary btn-lg btn-learn">Register Now</a></p>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		
+		<div id="colorlib-intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 intro-wrap">
+						<div class="intro-flex">
+							<div class="one-third color-1 animate-box">
+								<span class="icon"><i class="flaticon-market"></i></span>
+								<div class="desc">
+									<h3 style="font-size:20px;" >Innovative, Unique Tests for students By BVS Team.</h3>
+									<p><a href="#" class="view-more">View More</a></p>
+								</div>
+							</div>
+							<div class="one-third color-2 animate-box">
+								<span class="icon"><i class="flaticon-open-book"></i></span>
+								<div class="desc">
+									<h3 style="font-size:20px;" >Quality Resources</h3>
+									<p><a href="#" class="view-more">View More</a></p>
+								</div>
+							</div>
+							<div class="one-third color-2 animate-box">
+								<span class="icon"><i class="flaticon-diploma"></i></span>
+								<div class="desc">
+									<h3 style="font-size:20px;" >Affiliated Degrees for Older adults</h3>
+									<p><a href="#" class="view-more">View More</a></p>
+								</div>
+							</div>
+							<div class="one-third color-3 animate-box">
+								<div class="desc2">
+									<h3>Platform for Parents, govt.Officials to track Performance of any Educational Institution</h3>
+									<p><a href="#" class="view-more">View More</a></p>
+								</div>
+							</div>
+							<div class="one-third color-4 animate-box">
+								<div class="desc2">
+									<img src="static/images/flag-1.jpg" style="margin-left:-30px;" width="370px" height="630px"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="about-desc animate-box">
+							<h2>Welcome to BVS ( <em>BHARAT VIDYA SAMACHAR</em> )</h2>
+							<p><strong>A learning by doing platform,</strong> which provide full-time access for students, teachers, schools, colleges, universtities to <strong>compete, interact and lot more </strong> with other teachers, schools, colleges, universtities within and with other states too</p>
+							<p>BVS, promise you the best education support and make each and every student the best, and make them stand as an example to other's.</p>
+							<p>We provide online rankings to each and every school based on their performance in BVS tests, and we also help <strong>parents</strong> to track the performance of the school in which their child is studying, or can track any other school's performance on which they are interested in, through BVS platform.</p> 
+							<p>** BVS, plays role of parents for each and every student in tracking and monitoring the capablity of student and assigning tasks.</p>
+							<p>"Let BVS change the education system, by ranking schools such that each and every schools automatically improve to prove themselves which  enfields the feel of <strong>competing, innovative thinking, smart logic developments</strong> in each and every student for their respective schools."</p>
+							<div class="fancy-collapse-panel">
+	                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	                     <div class="panel panel-default">
+	                         <div class="panel-heading" role="tab" id="headingOne">
+	                             <h4 class="panel-title">
+	                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What we do?
+	                                 </a>
+	                             </h4>
+	                         </div>
+	                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	                             <div class="panel-body">
+	                                 <div class="row">
+									      		<div class="col-md-6">
+									      			<ul>
+									      			<li>
+									      				<p>Ranking each and every school based on student's performance in BVS tests and taking up tasks of early education monitoring each student in each and every school.</p>
+									      			</li>
+									      			</ul>
+									      		</div>
+									      		<div class="col-md-6">
+									      			<ul>
+									      			<li>
+									      			<p>Daily Monitoring of Student's Capability and continous qualitative materiality sessions for teachers and assignment allocations for students.</p>
+									      			</li>
+									      			</ul>
+									      		</div>
+									      		<div class="col-md-6">
+									      			<ul>
+									      			<li>
+									      			<p>We provide a unique and reliable platform where parents, education ministers, or any individual can track the performance of any school in any location.</p>
+									      			</li>
+									      			</ul>
+									      		</div>
+									      		<div class="col-md-6">
+									      			<ul>
+									      			<li>
+									      			<p>Affiliated Degrees for Older adults who want to continue their education, with a single click sitting at home. Monitoring uneducated adults to get access to basic essential education materials with multiple assigned BVS volunteers.</p>
+									      			</li>
+									      			</ul>
+									      		</div>
+									      	</div>
+	                             </div>
+	                         </div>
+	                     </div>
+	                     <div class="panel panel-default">
+	                         <div class="panel-heading" role="tab" id="headingTwo">
+	                             <h4 class="panel-title">
+	                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Why choose us?
+	                                 </a>
+	                             </h4>
+	                         </div>
+	                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	                             <div class="panel-body">
+	                             	<ul>
+	                                 <li>Because, BVS is a </strong>unique</strong> platform where students interact, compete, debate and improve their skills with qualitative practices through BVS.</li>
+	                                 <li> We are first platform born, <strong>till date</strong> who tracks the real time performance of schools and provide access to parents to keep track the performance of the schools before hand.</li>
+	                                 <li> </strong>Unique &amp; Innovative techniques</strong> to improve education system using technology, which is very useful for students.</li>
+	                                 <li>Provide Real time support from higher officials, government officials, regarding any issues for students within short period of time.</li>
+	                                 <li>Providing Access to older adults to continue their education sitting in home from </strong>affiliated universities</strong> &amp; monitoring the performances and quick guidance support. </li>
+									</ul>
+	                             </div>
+	                         </div>
+	                     </div>
+	                     <div class="panel panel-default">
+	                         <div class="panel-heading" role="tab" id="headingThree">
+	                             <h4 class="panel-title">
+	                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Services that BVS offer
+	                                 </a>
+	                             </h4>
+	                         </div>
+	                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+	                             <div class="panel-body">
+	                             	<ul>
+	                                 <li> We provide acces to real-time generated data, of various schools, colleges, &amp; universities, to various individuals with nomical charge, such that it is very useful and helpful for governments to improve their state in educational sector&amp; prove themselves in the real world and gain best ranking country wide</li>
+	                                 <li> We also provide detailed explanation of data generated, stats &amp; performance of students year wise to schools, with nominal price such that school can have knowledge, about failure of students and can improve their performance continuously.</li>
+	                                 <li>We provide affiliated courses with low and minium fee, making it access anywhere, &amp; anytime.</li>
+	                                 <li>Automatic, Real-time Data Transfer for our monthly, quarterly, yearly subscription customers, such that the data can be used for comparative analytics in future progress predictions innovatively.</li>
+	                             </ul>
+	                             </div>
+	                         </div>
+	                     </div>
+	                  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<div id="colorlib-services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-professor"></i>
+							</span>
+							<div class="desc">
+								<h3>Performance-based Online Ranking using AI</h3>
+								<p>Online Ranking for different schools by student's performance in BVS tests, using AI &amp; Machine Learning techniques.</p>
+								<p> BVS make the rankings visible to public individuals, so that parents, govt.officials, education ministers can easily track the performance of schools, colleges, universities, etc. &amp; keep focusing on improving much better competetively</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-book"></i>
+							</span>
+							<div class="desc">
+								<h3>Practical Training &amp; informative materials for Students</h3>
+								<p>BVS provide unique and innovative materials, and provide free access to students to post doubts such that BVS experts guide the students, to gain creativity &amp; feel confident.</p>
+								<p>BVS also provide quick support to low ranked schools to develop, compete with others inovatively to making them better day-by-day</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-diploma"></i>
+							</span>
+							<div class="desc">
+								<h3>Validated Certifications for Older adults</h3>
+								<p>Affiliated degrees from home, anytime through BVS platform &amp; our BVS experts monitors education progress of older adults to make them continue to gain more knowledge &amp; certifications.</p>
+								<p> We also have BVS volunteers area wise, to provide basic essential knowledge to uneducated older adults, which brings smiles on their faces</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 text-center animate-box">
+						<div class="services">
+							<span class="icon">
+								<i class="fa fa-cloud"></i>
+							</span>
+							<div class="desc">
+								<h3>Real time Data generation</h3>
+								<p>BVS platform have unique storage methods which does not effect the performance, processing &amp; computation power  &amp; deliver results to it's customer more faster as usual.</p>
+								<p>BVS provide access to real-time data for various state governments, individuals with nominal charge, so that they used it for analytics, &amp; extracting trends out of it to impove education in particular area.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(static/images/glass.jpg);" data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-book"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="2000" data-speed="5000" data-refresh-interval="50"></span>
+										<span class="colorlib-counter-label">+ Courses</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-student"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="500000" data-speed="5000" data-refresh-interval="150"></span>
+										<span class="colorlib-counter-label">+ Students</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-professor"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="200000" data-speed="5000" data-refresh-interval="150"></span>
+										<span class="colorlib-counter-label">+ Teachers</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 animate-box">
+								<div class="counter-entry">
+									<span class="icon"><i class="flaticon-earth-globe"></i></span>
+									<div class="desc">
+										<span class="colorlib-counter js-counter" data-from="0" data-to="01" data-speed="5000" data-refresh-interval="50"></span>
+										<span class="colorlib-counter-label">+ Countries</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="colorlib-classes colorlib-light-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Our BVS advanced chat Bot using ML &amp; AI</h2>
+						<p>Let BVS users, not wait for us. We are available 24 x 7. Our experts will assist you immediately</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 animate-box">
+						<div class="classes">
+							<iframe   allow="microphone;"  width="1200px" height="500px" align="center"
+						    src="https://console.dialogflow.com/api-client/demo/embedded/e85b2936-f3b3-474b-a230-75e8ba0a3fc8">
+						     </iframe>
+						</div>
+					</div>
+					
+				</div>
+			</div>	
+		</div>
+
+		<div id="colorlib-testimony" class="testimony-img" style="background-image: url(static/images/glass.jpg);" data-stellar-background-ratio="0.5" width="150px">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Famous Personalities about Education,</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="row animate-box">
+							<div class="owl-carousel1">
+								<div class="item">
+									<div class="testimony-slide">
+										<div class="testimony-wrap">
+											<blockquote>
+												<span>Nelson Mandela</span>
+												<p>Education is the most powerful weapon which you can use to change the world.</p>
+											</blockquote>
+											<div class="figure-img" style="background-image: url(static/images/nelson.jpg);"></div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide">
+										<div class="testimony-wrap">
+											<blockquote>
+												<span>Dr Martin Luther King Jr.</span>
+												<p>Intelligence plus character, that is the goal of true education.</p>
+											</blockquote>
+											<div class="figure-img" style="background-image: url(static/images/martin.jpg);"></div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide">
+										<div class="testimony-wrap">
+											<blockquote>
+												<span>Brian Herbert</span>
+												<p>The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice.</p>
+											</blockquote>
+											<div class="figure-img" style="background-image: url(static/images/brian.jpg);"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-trainers">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Our BVS IDEATION Partners</h2>
+						<p>Prominent Roles in Hackathon</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(static/images/BVS_LOGO.png)"></div>
+							<div class="desc">
+								<h3>BVS</h3>
+								<span>Our innovative Platform.</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(static/images/mismas.jpg)"></div>
+							<div class="desc">
+								<h3>MISHMASH</h3>
+								<span>HACKATHON COMMUNITY</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 animate-box">
+						<div class="trainers-entry">
+							<div class="trainer-img" style="background-image: url(static/images/skillenza_logo.jpg)"></div>
+							<div class="desc">
+								<h3>Skillenza</h3>
+								<span>-Innovative platform</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+        <div id="news"></div>
+		<div class="colorlib-blog colorlib-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>BVS Updates</h2>
+						<p>Hurry up! New Courses Launched</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 animate-box">
+						<article class="article-entry">
+							<a href="blog.html" class="blog-img" style="background-image: url(static/images/support.jpeg);">
+								<p class="meta"><span class="day">30</span><span class="month">Mar</span></p>
+							</a>
+							<div class="desc">
+								<h2><a href="#">24x7 Support Enabled</a></h2>
+								<p class="admin"><span>Posted by:</span> <span>RAVI VEMAGIRI</span></p>
+								<p>Hi, Esteemed and beloved followers of BVS. As we are growing up with you assisting you innovative tests and certified courses, we also have a great team to help you and assist you in any sort of help needed.</p>
+								<p>Our Experts, will be available 24 x 7 for your assistance.</p>
+							</div>
+						</article>
+					</div>
+					<div class="col-md-6">
+						<div class="f-blog animate-box">
+							<a href="#" class="blog-img" style="background-image: url(static/images/new_courses.png);">
+							</a>
+							<div class="desc">
+								<h2><a href="#">Hurry up! New Certification Courses Launched...!</a></h2>
+								<p class="admin"><span>28 March 2020</span></p>
+								<p>New Distant Education Courses, launched. Enroll and earn certification now with great discounts packed for you.</p>
+							</div>
+						</div>
+						<div class="f-blog animate-box">
+							<a href="#" class="blog-img" style="background-image: url(static/images/exam.jpg);">
+							</a>
+							<div class="desc">
+								<h2><a href="blog.html">New Testsets Launched in BVS</a></h2>
+								<p class="admin"><span>28 March 2020</span></p>
+								<p>Our experts are making innovative tests for students continuously to improve the standards.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	    
+		<div id="colorlib-subscribe" class="subs-img" style="background-image: url(static/images/glass.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
+						<h2>Subscribe Newsletter</h2>
+						<p>Subscribe to our BVS platform and get latest updates</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="row">
+							<div class="col-md-12">
+							<form class="form-inline qbstp-header-subscribe">
+								<div class="col-three-forth">
+									<div class="form-group">
+										<input type="text" class="form-control" id="email" placeholder="Enter your email">
+									</div>
+								</div>
+								<div class="col-one-third">
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary">Subscribe Now</button>
+									</div>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer id="colorlib-footer">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-3 colorlib-widget">
+						<h4>About BVS</h4>
+						<p>A unique platform where our BVS team, deals with early education monitoring, that tracks performance of various educational institutions and striving, working for older adults to continue their education</p>
+					</div>
+					<div class="col-md-3 colorlib-widget">
+						<h4>Quick Links</h4>
+						<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#"><i class="icon-check"></i> About Us</a></li>
+								<li><a href="#"><i class="icon-check"></i> View Rankings</a></li>
+								<li><a href="#"><i class="icon-check"></i> Contact Us</a></li>
+							</ul>
+						</p>
+					</div>
+
+					<div class="col-md-3 colorlib-widget">
+					</div>
+
+					<div class="col-md-3 colorlib-widget">
+						<div id="contact"></div>
+						<h4>Contact Info</h4>
+						<ul class="colorlib-footer-links">
+							<li>BVS TEAM</li>
+							<li><a href="tel://9704144938"><i class="icon-phone"></i> + 9704 144 998</a></li>
+							<li><a href="mailto:bvshelpdesk@gmail.com"><i class="icon-envelope"></i> bvshelpdesk@gmail.com</a></li>
+							<li><a href="#"><i class="icon-location4"></i>Bangalore, 560037</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="copy">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<p>
+								<small class="block">&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | BVS<a href="#">Team</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</small><br> 
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.min.js') }}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.easing.1.3.js') }}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static',filename='styles/js/bootstrap.min.js') }}"></script>
+	<!-- Waypoints -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.waypoints.min.js') }}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.stellar.min.js') }}"></script>
+	<!-- Flexslider -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.flexslider-min.js') }}"></script>
+	<!-- Owl carousel -->
+	<script src="{{ url_for('static',filename='styles/js/owl.carousel.min.js') }}"></script>
+	<!-- Magnific Popup -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='styles/js/magnific-popup-options.js') }}"></script>
+	<!-- Counters -->
+	<script src="{{ url_for('static',filename='styles/js/jquery.countTo.js') }}"></script>
+	<!-- Main -->
+	<script src="{{ url_for('static',filename='styles/js/main.js') }}"></script>
+
+	</body>
+</html>
+

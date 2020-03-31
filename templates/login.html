@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/css/styling_login.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<style type="text/css">
+		#header{ 
+      
+    overflow: hidden;
+    border: solid 2px black;
+} 
+  
+#top-header{ 
+          
+    text-align: center; 
+    height: 60px; 
+} 
+  
+/****************/    
+/* Styling Logo */
+/****************/
+#logo{ 
+    float: left; 
+    padding: none; 
+    margin: none; 
+    height: 60px; 
+    width: 30%; 
+} 
+#ml{ 
+    float: left; 
+    padding: 55px 25px; 
+    margin-left: 20px;  
+    width: 60%;
+    height: 600px;
+    margin-top:40px;
+}
+  
+#logo img{ 
+    width: 60%; 
+    float: left; 
+    padding: 10px 0px; 
+}     
+  
+/***************************/
+/* Styling Navigation Menu */
+/***************************/
+#menu{ 
+    float: right; 
+    width: 70%; 
+    height: 100%; 
+    margin: none;
+    background-color: black;
+} 
+      
+#menu ul{ 
+    text-align: center; 
+    float: right; 
+    margin: none; 
+    background: #0074D9; 
+} 
+      
+#menu li{ 
+    display: inline-block; 
+    padding: none; 
+    margin: none; 
+} 
+      
+#menu li a, #menu li span{ 
+    display: inline-block; 
+    padding: 0em 1.5em; 
+    text-decoration: none; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    line-height: 60px; 
+} 
+      
+#menu li a{ 
+          
+    color: #FFF; 
+} 
+      
+#menu li:hover a, #menu li span{ 
+    background: #FFF; 
+    color: #0074D9; 
+    border-left: 1px solid #0074D9; 
+    text-decoration: none; 
+}
+		</style>
+	</head>
+	<body style="background-color:white;">
+		<div class="login">
+			<h1>BVS LOGIN</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}" class="active">Login</a>
+				<a href="{{ url_for('register') }}">Register</a>
+				<a href="{{ url_for('banking') }}">ADMIN</a>
+			</div>
+			<form action="{{ url_for('login') }}" method="post">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" style="width:310px;" required>
+                <br/>
+				<select  name = "login_type" id="login_type" style="width:360px;height: 47px;padding: 0 15px;margin-bottom:20px;margin-top:15px;" >
+				  <option value=""> You Registered for</option>
+				  <option value="student">STUDENT</option>
+				  <option value="teacher">TEACHER</option>
+				  <option value="volunteer">VOLUNTEER</option>
+				  <option value="older_adult">OLDER_ADULT</option>
+				</select>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</body>
+</html>

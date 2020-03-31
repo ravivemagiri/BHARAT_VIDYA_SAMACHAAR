@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://anandchowdhary.github.io/ionicons-3-cdn/icons.css" integrity="sha384-+iqgM+tGle5wS+uPwXzIjZS5v6VkqCUV7YQ/e/clzRHAxYbzpUJ+nldylmtBWCP0" crossorigin="anonymous"
+    ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <title>OLDER ADULTS EDUCATION</title>
+<!--
+
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/owl-carousel.css">
+    <style type="text/css">
+	table, td, th {  
+	  border: 1px solid #ddd;
+	  text-align: center;
+	}
+
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	th, td {
+	  padding: 15px;
+	}
+	tr:hover {background-color:#f5f5f5;}
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+	body{
+	  background: #f2f2f2;
+	  font-family: 'Open Sans', sans-serif;
+	}
+	#course_name{
+
+    width: 80%;
+    height: 50px;
+    border: 2px solid black;
+    margin: 15px;
+    font-style: italic;
+	}
+	.btn-success {
+	  background: #5cb85c;
+	  color: #fff;
+	  height: 50px;
+	  width: 100px;
+	  border: 2px solid #5cb85c; }
+	  .btn-success:hover, .btn-success:focus, .btn-success:active {
+	    background: #4cae4c !important;
+	    border-color: #4cae4c !important; }
+	  .btn-success.btn-outline {
+	    background: transparent;
+	    color: #5cb85c;
+	    border: 2px solid #5cb85c; }
+
+    #abo{
+    	border:2px solid black;
+    	padding:20px;
+    	margin:15px;
+    }
+    #abo:hover{
+    	display:inline-block;
+    	border:1px solid white;
+    }
+    #abo img{
+    	float:left;
+
+    }
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+#view_button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+#view_button:hover, a:hover {
+  opacity: 0.7;
+}
+	</style>
+	</head>
+    
+    <body>
+	<header class="header-area header-stick">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo"><img src="static/styles/assets/images/tools.png" width="auto;" height="60px">OLDER ADULTS EDUCATION</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#abo">RESULTS</a></li>
+                            <li class="scroll-to-section"><a href="{{ url_for('logout') }}">Sign Out</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section" id="about2">
+    	<form action="{{ url_for('get_courses') }}" method="POST">
+	        <div class="container">
+	            <div class="row">
+	                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+	                    <div class="left-heading">
+	                        <h5>Search your Course here,</h5>
+	                    </div>
+	                </div>
+	            </div>
+	            <input type="text" name="course_name" id = "course_name"/>
+	            <input type="submit" value="Search" class="btn-success" id = "btn-success" align="center">
+	        </div>
+	    </form>
+    </section>
+
+<div id="delme" style="margin-bottom:20px;">
+	<p><hr/></p>
+	<p></p>
+	<p></p>
+</div>
+</br>
+<div class="card" style="margin-bottom:15px;margin-left:300px;" id="abo">
+  <img src="/static/images/error.png" alt="Error_Thumnail" style="width:100%">
+  <h2 style="color:#3b59ac;font-family:Lato;"> Sorry, We dont have such course.</h2>
+  
+</div>
+
+<br/>
+<section class="section" id="services">
+        <div class="container">
+            <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">Copyright &copy; 2020 BVS Platform | SOLVE4BHARAT Hackathon 
+                
+                . Design: Ravi Vemagiri, BVS Team</p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+    </section>
+    <script src="static/styles/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="static/styles/assets/js/popper.js"></script>
+    <script src="static/styles/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="static/styles/assets/js/owl-carousel.js"></script>
+    <script src="static/styles/assets/js/scrollreveal.min.js"></script>
+    <script src="static/styles/assets/js/waypoints.min.js"></script>
+    <script src="static/styles/assets/js/jquery.counterup.min.js"></script>
+    <script src="static/styles/assets/js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="static/styles/assets/js/custom.js"></script>
+
+</body>
+</html>

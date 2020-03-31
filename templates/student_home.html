@@ -1,0 +1,230 @@
+<html>
+<head>
+  <style type="text/css">
+  .pull-left { float: left; }
+  .pull-right { float: right; }
+  .pull-left li, .pull-right li { display: inline-block; }
+  #main_item { overflow: hidden; }
+
+  #main_item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3b59ac;
+    width:100%;
+    top:0;
+  }
+
+  #sub_item {
+    float: left;
+  }
+
+  #sub_item  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  #sub_item  a:hover {
+    background-color: #111111;
+  }
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+}
+  </style>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  <ul id="main_item" style="height:auto"> 
+    <div class="pull-left">
+      <li id="sub_item"><a href="#home" title="BVS - BHARAT VIDYA SAMCHAAR" style="margin-left:28px;width:150px;font-weight:2;">BVS STUDENT PORTAL</a></li>
+   </div>
+    <div class="pull-right">
+      <li id="sub_item"><a href="#">Home</a></li>
+      <li id="sub_item"><a href="{{ url_for('tests_taken') }}">My Exams</a></li>
+    <li id="sub_item"><a href="{{ url_for('profile') }}">Profile</a></li>
+    <li id="sub_item"><a href="{{ url_for('logout') }}">LogOut</a></li>
+  </div>
+</ul>
+<hr/>
+<div class="w3-container" align="center">
+  <div class="w3-card-4" style="width:70%">
+    <header class="w3-container w3-light-grey">
+      <h3>A SAMPLE TEST FOR PRACTICE</h3>
+    </header>
+    <div class="w3-container">
+      <p>All the best wishes, from BVS TEAM.</p>
+      <hr>
+      <div class="w3-quarter" style="margin-right:300px;margin-left:200px;">
+      <video id = "myVideo" controls width="600px" height="500px">
+     <!--  <source src = "video.mp4"> -->
+      <source src="/static/video.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <br/>
+    </div>
+  </div>
+</div>
+<form action="{{ url_for('process_answers') }}" method="POST">
+  <br>
+<textarea rows="1" cols="80" id="answers" type="text" name="answers" style="margin-left:350px;padding:12px;border:1px solid black;">Your Answers:</textarea>
+<div id="success_msg"></div>
+<br/>
+<input type="submit" value="Submit my Test" style="padding:5px;color:white;background-color:#3b5998;margin-left:650px;" align="center">
+</form>
+</br>
+</br>
+<div class="footer">
+  &copy;2020| All rights reserved | BVS TEAM
+  </div>
+  <script type="text/javascript">
+// Modal Image Gallery
+function sendAns(){
+  $("#success_msg").empty();
+  $.ajax({
+  type: "POST",
+  url: "/process_answers",
+  data: {"string1": $("#answers").val()},
+  cache: false,
+  success: function(html){
+    $("#success_msg").append(html);
+  }
+  });
+}
+
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function say(m) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[10];
+  msg.voiceURI = "native";
+  msg.volume = 1;
+  msg.rate = 1;
+  msg.pitch = 0.8;
+  msg.text = m;
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+
+function alerting_end() {
+  var msg=new SpeechSynthesisUtterance("Congratulations you have completed this video. Now click on \"submit my Test\" Button below.");
+  alert("Congratulations, Exam Done.",window.speechSynthesis.speak(msg));
+}
+function correct() {
+  var msg = new SpeechSynthesisUtterance("Your Answers are, saved. You can continue the video.");
+  // msg.text = message;
+  // msg.volume = 1;
+  // msg.rate = 1;
+  // msg.pitch = 1;
+  alert("Your Result:",window.speechSynthesis.speak(msg));
+  //alert("That's Great. Congratulations! You can continue the video.");
+}
+var myVideo = document.getElementById ("myVideo");
+var ans = []
+myVideo.ontimeupdate = function () {
+ // Remove the decimal numbers from the time
+ var currentTime = Math.floor (myVideo.currentTime);
+ if (currentTime == 60) {
+ myVideo.pause ();
+ // Ask the question with a promt
+var ques1 = prompt ("Question 1 : \n This tutorial is about interacting with: \n a) Customer / Client \n b) Student \n c) Lawyer \n d) Teacher");
+var ques2 = prompt ("Question 2 : \n For Effective Communication, Store promoter has to focus on: \n a) Understanding Customers Communication Style \n b) Reading Books \n c) Clarity in Communication \n d) Both a and c"); // check the answer
+ ans.push(ques1)
+ ans.push(ques2)
+ correct()
+ myVideo.currentTime = 61; // Add a second otherwise the question will be displayed again;
+ myVideo.play ();
+ }
+ else if (currentTime == 121) {
+ myVideo.pause ();
+ // Ask the question with a promt
+var ques1 = prompt ("Question 1 : \n For how many minutes do promoter should not disturb the customer? \n a) Two \n b) Three \n c) Four \n d) All of the above");
+var ques2 = prompt ("Question 2 : \n What should the promoter indicate to the customer to satisfy their needs? \n a) Sincere Interest \n b) Anger \n c) No concentration \n d) All of the above");
+ // check the answer
+ ans.push(ques1)
+ ans.push(ques2)
+ correct()
+ myVideo.currentTime = 122; // Add a second otherwise the question will be displayed again;
+ myVideo.play ();
+ } 
+ else if (currentTime == 181) {
+ myVideo.pause ();
+ // Ask the question with a promt
+var ques1 = prompt ("Question 1 : \n What make customer feel ease? \n a) Direct eye-contact and hand movement \n b) Providing snacks for them \n c) Not looking at them \n d) All of the above");
+var ques2 = prompt ("Question 2 : \n Promoter, always needs to listen to customer carefully. \n a) Yes \n b) No \n c) Not always required \n d) Both a and b");
+ // check the answer
+ ans.push(ques1)
+ ans.push(ques2)
+ correct()
+ myVideo.currentTime = 182; // Add a second otherwise the question will be displayed again;
+ myVideo.play ();
+ }
+ else if (currentTime == 241) {
+ myVideo.pause ();
+ // Ask the question with a promt
+var ques1 = prompt ("Question 1 : \n Features are: \n a) Product Quality and characterisitics \n b) Internal components of device \n c) Multiple objects \n d) All of the above");
+var ques2 = prompt ("Question 2 : \n Promoter can guide the customers towards what, so that it satisfies the customer needs. \n a) Right Product \n b) exit \n c) non-trending mobiles \n d) Both b and c");
+// check the answer
+ ans.push(ques1)
+ ans.push(ques2)
+ correct()
+ myVideo.currentTime = 242; // Add a second otherwise the question will be displayed again;
+ myVideo.play ();
+ }
+ else if (currentTime == 301) {
+ myVideo.pause ();
+ // Ask the question with a promt
+var ques1 = prompt ("Question 1 : \n Sometimes, Customer have reservations about: \n a) Buying a product \n b) Getting Discount \n c) Not discussing more \n d) Both b and c");
+var ques2 = prompt ("Question 2 : \n Best approach for handling reservation is to: \n a) Relax and Listen \n b) not listen to them \n c) not to relax \n d) Both b and c");
+// check the answer
+ ans.push(ques1)
+ ans.push(ques2)
+ correct()
+ myVideo.currentTime = 302; // Add a second otherwise the question will be displayed again;
+ myVideo.play ();
+ }
+ else if (currentTime == 676) {
+//alert(myVideo.duration);
+myVideo.pause();
+alerting_end();
+myVideo.currentTime = 0;
+}
+console.log(ans,"here")
+var myDiv = document.getElementById("answers");
+myDiv.innerHTML = ans;
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/css/styling_login.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<script src="{{ url_for('static',filename='styles/js/countries.js') }}"></script>
+		<style type="text/css">
+		.p{
+			  font-family: arial;
+			  font-weight: bold;
+			}
+			.button{
+			  background-color: #2a609a;
+				width: 130px;
+				height: 60px;
+			  color: white;
+			  outline: none;
+			  font-size: 16px;
+			  border: none;
+			  cursor: pointer;
+			}
+
+			.block-display button{
+			  margin-bottom:5px;
+			  display:block;
+			}
+
+			.button:hover{
+			  background-color: #32CD32;
+			  font-size: 12px;
+			  transition: 0.5s;
+			}
+			.stateId{
+				width:380px;
+			}
+         </style>
+	</head>
+	<body>
+		<div class="register">
+			<h1>TEACHER REGISTRATION</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('teacher') }}" class="active">TEACHER</a>
+				<a href="{{ url_for('banking') }}">Admin Login</a>
+			</div>
+			<form action="{{ url_for('teacher_registration') }}" method="POST" autocomplete="off">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="fname" placeholder="First Name" id="fname" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="lname" placeholder="Last Name" id="lname" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="user name" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<label for="mail">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="text" name="mail" placeholder="Enter your mail" id="mail" required>
+				<label for="school">
+					<i class="fas fa-school"></i>
+				</label>
+				<input type="text" name="school" placeholder="Enter your school name" id="school" required>
+				<label for="subject">
+					<i class="fas fa-book-reader"></i>
+				</label>
+				<input type="text" name="subject" placeholder="Subject(s) you deal with?" id="subject" required>
+				<br/>
+                <label for="country">
+					<i class="fas fa-map-marker"></i>
+				</label>
+				<select name="countryId" class="countries order-alpha" id="countryId" style="width:310px;height: 47px;padding: 0 15px;">
+				    <option value="">Select Country</option>
+				</select>	
+				<!-- <label for="city">
+					<i class="fas fa-map-marker"></i>
+				</label>
+				<select name="city" class="cities order-alpha" id="cityId" style="width:300px;">
+				    <option value="">Select City</option>
+				</select> -->
+				<!-- <select id="registration_type" style="width:300px;">
+				  <option value="student">STUDENT</option>
+				  <option value="teacher">TEACHER</option>
+				  <option value="grama_volunteer">Grama Volunteer</option>
+				  <option value="Older-adult-login">Older Adult Login</option>
+				</select> -->
+				<p style="display:none;"><p>
+				<select name="stateId" class="states order-alpha" id="stateId" style="width:360px;height: 47px;padding: 0 15px;">
+				    <option value="" >Select State</option>
+				</select>
+				<p style="display:none;"><p>
+				<select name="cityId" class="cities order-alpha" id="cityId" style="width:360px;height: 47px;padding: 0 15px;">
+				    <option value="">Select City</option>
+				</select>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</body>
+</html>
+<script src="{{ url_for('static',filename='styles/js/one.js') }}"></script>
+<script src="{{ url_for('static',filename='styles/js/two.js') }}"></script>

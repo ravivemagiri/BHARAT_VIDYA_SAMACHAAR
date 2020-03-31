@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://anandchowdhary.github.io/ionicons-3-cdn/icons.css" integrity="sha384-+iqgM+tGle5wS+uPwXzIjZS5v6VkqCUV7YQ/e/clzRHAxYbzpUJ+nldylmtBWCP0" crossorigin="anonymous"
+    ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <title>OLDER ADULTS EDUCATION</title>
+<!--
+
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="static/styles/assets/css/owl-carousel.css">
+    <style type="text/css">
+	table, td, th {  
+	  border: 1px solid #ddd;
+	  text-align: center;
+	}
+
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+
+	th, td {
+	  padding: 15px;
+	}
+	tr:hover {background-color:#f5f5f5;}
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+	body{
+	  background: #f2f2f2;
+	  font-family: 'Open Sans', sans-serif;
+	}
+	#course_name{
+
+    width: 80%;
+    height: 50px;
+    border: 2px solid black;
+    margin: 15px;
+    font-style: italic;
+	}
+	.btn-success {
+	  background: #5cb85c;
+	  color: #fff;
+	  height: 50px;
+	  width: 100px;
+	  border: 2px solid #5cb85c; }
+	  .btn-success:hover, .btn-success:focus, .btn-success:active {
+	    background: #4cae4c !important;
+	    border-color: #4cae4c !important; }
+	  .btn-success.btn-outline {
+	    background: transparent;
+	    color: #5cb85c;
+	    border: 2px solid #5cb85c; }
+
+    #abo{
+    	border:2px solid black;
+    	padding:20px;
+    	margin:15px;
+    }
+    #abo:hover{
+    	display:inline-block;
+    	border:1px solid white;
+    }
+    #abo img{
+    	float:left;
+
+    }
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+#view_button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+#view_button:hover, a:hover {
+  opacity: 0.7;
+}
+	</style>
+	</head>
+    
+    <body>
+	<header class="header-area header-stick">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo"><img src="static/styles/assets/images/tools.png" width="auto;" height="60px">OLDER ADULTS EDUCATION</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#abo">RESULTS</a></li>
+                            <li class="scroll-to-section"><a href="{{ url_for('logout') }}">Sign Out</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section" id="about2">
+    	<form action="{{ url_for('get_courses') }}" method="POST">
+	        <div class="container">
+	            <div class="row">
+	                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+	                    <div class="left-heading">
+	                        <h5>Search your Course here,</h5>
+	                    </div>
+	                </div>
+	            </div>
+	            <input type="text" name="course_name" id = "course_name"/>
+	            <input type="submit" value="Search" class="btn-success" id = "btn-success" align="center">
+	        </div>
+	    </form>
+    </section>
+
+<div id="delme" style="margin-bottom:20px;">
+	<p><hr/></p>
+	<p></p>
+	<p></p>
+</div>
+</br>
+
+
+{% for each_course in results %}
+<div class="card" style="margin-bottom:5px;">
+  <img src="{{  each_course['thumbnail'] }}" alt="Course_Thumnail" style="width:100%">
+  <h2 style="color:#3b59ac;font-family:Lato;"><strong> {{  each_course['title'] }} </h2>
+  <p class="title"><span style="color:black;">Course Provider:</span> {{  each_course['provider'] }}</p>
+  <p><span style="color:black;">Language:</span> {{  each_course['language'] }}</p>
+  <p><span style="color:black;">User_Reviews:</span> {{  each_course['rating_count'] }}</p>
+  <p><span style="color:black;">Course Price:</span> {{  each_course['price'] }}</p>
+  <p><span style="color:black;">Course Description:</span></p>
+  <p style="margin:5px;padding:5px;text-align:justify;">{{  each_course['desc'] }}</p>
+  <p> <a href=" {{  each_course['url'] }} " target="_blank" id="view_button">VIEW COURSE</a></p>
+</div>
+	<!-- <div align="center" id="abo" class="card" >
+
+	<p><img height="auto" width="auto" src="{{  each_course['thumbnail'] }}"></p>
+    <h1 style="font-size:20px;font-family:Lato;color:#3b59ac;"> <strong> {{  each_course['title'] }} </strong></h1>
+    <p> {{  each_course['provider'] }}</p>
+    <p> {{  each_course['desc'] }}</p>
+    <p> {{  each_course['language'] }}</p>
+    <p> {{  each_course['title'] }}</p>
+    <p> {{  each_course['rating_count'] }}</p>
+    <p> <a href=" {{  each_course['url'] }} " target="_blank">VIEW COURSE</a></p>
+	</div> -->
+{% endfor %}
+<!-- {'title': 'Pythonic Python Part I: The Basics', 'provider': 'Udemy', 'desc': 'This is Pythonic Python - Part I of a complete Python course for programmers, in four parts. The focus, besides learning Python, is learning  Pythonic idioms so that your code is beautiful, easy to read and modify, and  fast-running. The Syllabus: Part I - The Python Basics Make yourself useful. lab 01 Birds Eye Viewlab 02 Branching and Loopinglab 03 Input and Exceptionslab 04 Formatting Stringslab 05 Functionslab 06 importlab 07 Attribute Scopelab 08 Flexible Functionslab 09 Sequence Slicinglab 10 Sequence Accumulatinglab 11 Sequence Differenceslab 12 list Facilitieslab 13 Sequences And Mutabilitylab 14 sys Library Part II  The  Buzz Heavy-hitting, time-saving, fun facilities. lab 15 Reuse Tricklab 16 list Scope Issuelab 17 Arguments And Mutabilitylab 18 list Comprehensionslab 19 Functional Programminglab 20 from importinglab 21 Dictionarieslab 22 Dictionary Marvelslab 23 Variable Arguments Protocolslab 24 raise An Exceptionlab 25 File IOlab 26 os Modulelab 27 Packageslab 28 Dynamic Codelab 29 Decoratorslab 30 Generators Part III Pythonic OOP So brilliant, you might need shades. lab 31 Classeslab 32 Containmentlab 33 Inheritancelab 34 Multiple Inheritancelab 35 Magical Powerslab 36 Privacy And Introspectionlab 37 Class Attributes and Scopelab 38 New Style Classeslab 39 Iteration Supportlab 40 Attribute Controllab 41 Static and Class Methodslab 42 Context Manager Part IV  The Expert Know it all. lab 43 Deep Copieslab 44 Piping With subprocesslab 45 File Pattern globbinglab 46 Timing Your Codelab 47 unittest Frameworkslab 48 Option Parsing Frameworkslab 49 Catching Exceptionslab 50 Raising Exceptionslab 51 Inventing Exceptionslab 52 Namespace Reviewlab 53 Pitfallslab 54 Finding Modules', 'language': 'English', 'thumbnail': 'https://i.udemycdn.com/course/480x270/21282_a174_7.jpg', 'url': 'https://www.udemy.com/course/pythonic-python-part-i-the-basics/', 'price': '₹1,280', 'rating_count': '37 reviews', '_id': '5429583310d8cf3ca490f715597a795f'} -->
+
+
+<br/>
+<section class="section" id="services">
+        <div class="container">
+            <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">Copyright &copy; 2020 BVS Platform | SOLVE4BHARAT Hackathon 
+                
+                . Design: Ravi Vemagiri, BVS Team</a></p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+    </section>
+    <script src="static/styles/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="static/styles/assets/js/popper.js"></script>
+    <script src="static/styles/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="static/styles/assets/js/owl-carousel.js"></script>
+    <script src="static/styles/assets/js/scrollreveal.min.js"></script>
+    <script src="static/styles/assets/js/waypoints.min.js"></script>
+    <script src="static/styles/assets/js/jquery.counterup.min.js"></script>
+    <script src="static/styles/assets/js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="static/styles/assets/js/custom.js"></script>
+
+</body>
+</html>

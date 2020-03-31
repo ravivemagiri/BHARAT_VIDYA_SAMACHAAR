@@ -1,0 +1,132 @@
+<html>
+<head>
+  <style type="text/css">
+  .pull-left { float: left; }
+  .pull-right { float: right; }
+  .pull-left li, .pull-right li { display: inline-block; }
+  #main_item { overflow: hidden; }
+
+  #main_item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3b59ac;
+    width:100%;
+    top:0;
+  }
+
+  #sub_item {
+    float: left;
+  }
+
+  #sub_item  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  #sub_item  a:hover {
+    background-color: #111111;
+  }
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+}
+  </style>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+  <ul id="main_item" style="height:auto"> 
+    <div class="pull-left">
+      <li id="sub_item"><a href="#home" title="BVS - BHARAT VIDYA SAMCHAAR" style="margin-left:580px;width:350px;height:80px;font-weight:2;">Online Ranking Winner</a></li>
+   </div>
+</ul>
+<hr/>
+<div class="w3-container" align="center">
+  <div class="w3-card-4" style="width:70%">
+    <div class="w3-container">
+     <img src="static/images/winner.jpg" height="300px;" width="300px">
+     <h5> Online Rank Secured: 1</h5>
+      <table>
+        <tr><td>School Name:</td><td>{{ topper_school_info['school'] }}</td></tr>
+        <tr><td>City:</td><td>{{ topper_school_info['city'] }}</td></tr>
+        <tr><td>State:</td><td>{{ topper_school_info['state'] }}</td></tr>
+        <tr><td>Country:</td><td>{{ topper_school_info['country'] }}</td></tr>
+    </table>
+    </div>
+    <br/>
+    </div>
+  </div>
+</div>
+</br>
+<div class="w3-container" align="center">
+  <div class="w3-card-4" style="width:70%">
+    <div class="w3-container">
+     <img src="static/images/second.jpg" height="300px;" width="300px">
+     <h5> Online Rank Secured: 2</h5>
+      <table>
+        <tr><td>School Name:</td><td>Global Innovation School</td></tr>
+        <tr><td>City:</td><td>Hyderbad</td></tr>
+        <tr><td>State:</td><td>Hyderabad</td></tr>
+        <tr><td>Country:</td><td>India</td></tr>
+    </table>
+    </div>
+    <br/>
+    </div>
+  </div>
+</div>
+</br>
+<div class="w3-container" align="center">
+  <div class="w3-card-4" style="width:70%">
+    <div class="w3-container">
+     <img src="static/images/third.jpg" height="300px;" width="300px">
+     <h5> Online Rank Secured: 3</h5>
+      <table>
+        <tr><td>School Name:</td><td>Ravindra Bharathi high School</td></tr>
+        <tr><td>City:</td><td>Khammam</td></tr>
+        <tr><td>State:</td><td>Telangana</td></tr>
+        <tr><td>Country:</td><td>India</td></tr>
+    </table>
+    </div>
+    <br/>
+    </div>
+  </div>
+</div>
+</br>
+<!-- {% for each_course in results %}
+<div class="card" style="margin-bottom:5px;">
+  <img src="{{  each_course['thumbnail'] }}" alt="Course_Thumnail" style="width:100%">
+  <h2 style="color:#3b59ac;font-family:Lato;"><strong> {{  each_course['title'] }} </h2>
+  <p class="title"><span style="color:black;">Course Provider:</span> {{  each_course['provider'] }}</p>
+  <p><span style="color:black;">Language:</span> {{  each_course['language'] }}</p>
+  <p><span style="color:black;">User_Reviews:</span> {{  each_course['rating_count'] }}</p>
+  <p><span style="color:black;">Course Price:</span> {{  each_course['price'] }}</p>
+  <p><span style="color:black;">Course Description:</span></p>
+  <p style="margin:5px;padding:5px;text-align:justify;">{{  each_course['desc'] }}</p>
+  <p> <a href=" {{  each_course['url'] }} " target="_blank" id="view_button">VIEW COURSE</a></p>
+</div>
+  <!-- <div align="center" id="abo" class="card" >
+
+  <p><img height="auto" width="auto" src="{{  each_course['thumbnail'] }}"></p>
+    <h1 style="font-size:20px;font-family:Lato;color:#3b59ac;"> <strong> {{  each_course['title'] }} </strong></h1>
+    <p> {{  each_course['provider'] }}</p>
+    <p> {{  each_course['desc'] }}</p>
+    <p> {{  each_course['language'] }}</p>
+    <p> {{  each_course['title'] }}</p>
+    <p> {{  each_course['rating_count'] }}</p>
+    <p> <a href=" {{  each_course['url'] }} " target="_blank">VIEW COURSE</a></p>
+  </div> -->
+<!-- {% endfor %} -->
+<div class="footer">
+  &copy;2020| All rights reserved | BVS TEAM
+  </div>
+</body>
+</html>
